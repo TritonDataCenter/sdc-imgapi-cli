@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+/*
+ * Copyright (c) 2012, Joyent, Inc. All rights reserved.
+ *
+ * Demonstration imgapi-cli instance. Typically one would provide a wrapper
+ * that handles determining the appropriate IMGAPI URL.
+ */
+
+var CLI = require('../lib/cli');
+
+
+
+//---- mainline
+
+function main(argv) {
+    var cli = new CLI();
+    cli.main(argv);
+}
+
+if (require.main === module) {
+    main(process.argv);
+}
+
+
