@@ -9,16 +9,38 @@
 var CLI = require('../lib/cli');
 
 
+//---- globals
+
+var NAME = 'imgapi-cli';
+var DESCRIPTION = 'A demo imgapi-cli instance for talking to an IMGAPI.\n'
+    + 'This speaks to an IMGAPI running at <http://localhost:8080>.\n';
+var URL = 'http://localhost:8080';
+
+
+//---- support stuff
+
+function logerror(msg) {
+    console.error(NAME + ': error: ' + msg);
+}
+
 
 //---- mainline
 
 function main(argv) {
-    var cli = new CLI();
-    cli.main(argv);
+    var cli = new CLI({
+        name: NAME,
+        description: DESCRIPTION,
+        url: URL
+    });
+    cli.main(argv, function (err) {
+        if (err) {
+            logerror(err.message);
+            process.exit(err.exitStatus || 1);
+        }
+        process.exit(0);
+    });
 }
 
 if (require.main === module) {
     main(process.argv);
 }
-
-

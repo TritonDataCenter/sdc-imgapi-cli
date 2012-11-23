@@ -23,7 +23,7 @@ before(function (next) {
 });
 
 test('imgapi-cli --version', function (t) {
-    exec('imgapi-cli --version', function (err, stdout, stderr) {
+    exec('./bin/imgapi-cli --version', function (err, stdout, stderr) {
         t.ifError(err, err);
         t.equal(stderr, '', 'stderr');
         t.ok(/^imgapi-cli \d+\.\d+\.\d+/.test(stdout), 'stdout is a version');
