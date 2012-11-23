@@ -6,6 +6,7 @@
  * that handles determining the appropriate IMGAPI URL.
  */
 
+var format = require('util').format;
 var CLI = require('../lib/cli');
 
 
@@ -19,8 +20,12 @@ var URL = 'http://localhost:8080';
 
 //---- support stuff
 
-function logerror(msg) {
-    console.error(NAME + ': error: ' + msg);
+function logerror(err) {
+    if (err.code) {
+        console.error(format('%s: %s: %s', NAME, err.code, err.message));
+    } else {
+        console.error(format('%s: error: %s', NAME, err));
+    }
 }
 
 
@@ -34,7 +39,7 @@ function main(argv) {
     });
     cli.main(argv, function (err) {
         if (err) {
-            logerror(err.message);
+            logerror(err);
             process.exit(err.exitStatus || 1);
         }
         process.exit(0);
