@@ -36,9 +36,15 @@ function main(argv) {
         name: NAME,
         url: URL,
         description: DESCRIPTION,
-        //auth: 'none'
-        //auth: 'basic'
-        auth: 'signature'
+        //auth: 'none',
+        //auth: 'basic',
+        auth: 'signature',
+        envopts: [
+            ['IMGAPI_CLI_IDENTITY', 'identity'],
+            ['IMGAPI_CLI_USER', 'user'],
+            ['IMGAPI_CLI_ACCOUNT', 'user'],
+            ['USER', 'user']
+        ]
     });
     cli.main(argv, function (err) {
         if (err) {
