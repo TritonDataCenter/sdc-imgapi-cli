@@ -34,8 +34,11 @@ function logerror(err) {
 function main(argv) {
     var cli = new CLI({
         name: NAME,
+        url: URL,
         description: DESCRIPTION,
-        url: URL
+        //auth: 'none'
+        //auth: 'basic'
+        auth: 'signature'
     });
     cli.main(argv, function (err) {
         if (err) {
