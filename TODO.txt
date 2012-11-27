@@ -1,6 +1,6 @@
 - other endpoints:
 
-    cli images ...  # ListImages
+    cli list ...    # ListImages (done-ish)
     cli get         # GetImage (aliases 'info' and 'show' for compat with imgadm and vmadm)
     cli getfile     # GetImageFile
     cli delete      # DeleteImage
