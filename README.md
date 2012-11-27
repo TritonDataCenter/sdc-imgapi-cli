@@ -23,13 +23,6 @@ Note that these two tools are distinct from the `imgadm` tool available in all
 SmartOS installations.
 
 
-# Limitations
-
-- "Signature" auth mode does not support signing via ssh-agent yet.
-- "Signature" auth mode does not support DSA keys yet.
-
-
 # Development
 
 TODO
-
