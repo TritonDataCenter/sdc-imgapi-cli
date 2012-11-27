@@ -24,7 +24,7 @@ function logerror(err) {
     if (err.code) {
         console.error(format('%s: %s: %s', NAME, err.code, err.message));
     } else {
-        console.error(format('%s: error: %s', NAME, err));
+        console.error(format('%s: error: %s', NAME, err.message));
     }
 }
 

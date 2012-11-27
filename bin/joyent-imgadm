@@ -1,0 +1,71 @@
+#!/usr/bin/env node
+/*
+ * Copyright (c) 2012, Joyent, Inc. All rights reserved.
+ *
+ * CLI for working with the central Joyent Images API:
+ *      https://images.joyent.com.
+ */
+
+var format = require('util').format;
+var CLI = require('../lib/cli');
+
+
+//---- globals
+
+var NAME = 'joyent-imgadm';
+var URL = 'https://64.30.133.39';
+//var URL = 'https://images.joyent.com';
+var DESCRIPTION = (
+    'Manage images on the central Joyent Images API (https://images.joyent.com).\n'
+    + '\n'
+    + 'Authentication is required for any modifying endpoints (adding images,\n'
+    + 'etc.). To get access, you must have your username and key added\n'
+    + 'by the Images API administrator. Then set the following in your\n'
+    + 'environment (presuming "~/.ssh/id_rsa.pub" is the key you provided):\n'
+    + '\n'
+    + '    export JOYENT_IMGADM_USER=<given username>\n'
+    + '    export JOYENT_IMGADM_IDENTITY=`ssh-keygen -l -f ~/.ssh/id_rsa.pub \\\n'
+    + '        | awk \'{print $2}\' | tr -d \'\\n\'`\n'
+    + '\n'
+    + 'If setup correctly, `joyent-imgadm ping` should work (prints "pong").\n'
+    );
+
+
+//---- support stuff
+
+function logerror(err) {
+    if (err.code) {
+        console.error(format('%s: %s: %s', NAME, err.code, err.message));
+    } else {
+        console.error(format('%s: error: %s', NAME, err.message));
+    }
+}
+
+
+//---- mainline
+
+function main(argv) {
+    var cli = new CLI({
+        name: NAME,
+        url: URL,
+        description: DESCRIPTION,
+        auth: 'signature',
+        envopts: [
+            ['JOYENT_IMGADM_IDENTITY', 'identity'],
+            //['JOYENT_IMGADM_KEY_ID', 'identity'],
+            ['JOYENT_IMGADM_USER', 'user'],
+            //['JOYENT_IMGADM_ACCOUNT', 'user']
+        ]
+    });
+    cli.main(argv, function (err) {
+        if (err) {
+            logerror(err);
+            process.exit(err.exitStatus || 1);
+        }
+        process.exit(0);
+    });
+}
+
+if (require.main === module) {
+    main(process.argv);
+}

@@ -1,0 +1,79 @@
+#!/usr/bin/env node
+/*
+ * Copyright (c) 2012, Joyent, Inc. All rights reserved.
+ *
+ * CLI for working with the IMGAPI in this SDC datacenter.
+ */
+
+var format = require('util').format;
+var execFile = require('child_process').execFile;
+var CLI = require('../lib/cli');
+
+
+//---- globals
+
+var NAME = 'sdc-imgadm';
+var DESCRIPTION = (
+    'Manage images in this SmartDataCenter\'s Images API (IMGAPI).\n'
+    );
+
+
+//---- support stuff
+
+function logerror(err) {
+    if (err.code) {
+        console.error(format('%s: %s: %s', NAME, err.code, err.message));
+    } else {
+        console.error(format('%s: error: %s', NAME, err.message));
+    }
+}
+
+function getUrl(callback) {
+    execFile('/bin/bash', ['/lib/sdc/config.sh', '-json'],
+        function (err, stdout, stderr) {
+            if (err) {
+                return callback(new Error('failed to get config: ' + stderr));
+            }
+
+            try {
+                config = JSON.parse(stdout);
+            } catch (e) {
+                return callback(new Error('failed to parse config: ' +
+                    JSON.stringify(e)));
+            }
+
+            var imgapi_ip = config.imgapi_admin_ips.split(',')[0];
+            var url = 'http://' + imgapi_ip;
+            callback(null, url);
+        }
+    );
+}
+
+
+//---- mainline
+
+function main(argv) {
+    getUrl(function (urlErr, url) {
+        if (urlErr) {
+            logerror(urlErr);
+            process.exit(1);
+        }
+        var cli = new CLI({
+            name: NAME,
+            url: url,
+            description: DESCRIPTION,
+            auth: 'none'
+        });
+        cli.main(argv, function (err) {
+            if (err) {
+                logerror(err);
+                process.exit(err.exitStatus || 1);
+            }
+            process.exit(0);
+        });
+    });
+}
+
+if (require.main === module) {
+    main(process.argv);
+}
