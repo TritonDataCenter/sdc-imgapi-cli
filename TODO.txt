@@ -1,0 +1,13 @@
+- other endpoints:
+
+    cli images ...  # ListImages
+    cli get         # GetImage (aliases 'info' and 'show' for compat with imgadm and vmadm)
+    cli getfile     # GetImageFile
+    cli delete      # DeleteImage
+    cli create      # CreateImage
+    cli addfile     # AddImageFile
+    cli activate    # ActivateImage
+    cli update      # UpdateImage (NYI)
+- man page
+- bash completion
+- 'cli images' filtering options
