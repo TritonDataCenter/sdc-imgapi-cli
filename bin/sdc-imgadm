@@ -20,11 +20,14 @@ var DESCRIPTION = (
 
 //---- support stuff
 
-function logerror(err) {
+function logerror(err, verbose) {
     if (err.code) {
         console.error(format('%s: %s: %s', NAME, err.code, err.message));
     } else {
         console.error(format('%s: error: %s', NAME, err.message));
+    }
+    if (verbose && err.stack) {
+        console.error('\n' + err.stack);
     }
 }
 
@@ -64,9 +67,9 @@ function main(argv) {
             description: DESCRIPTION,
             auth: 'none'
         });
-        cli.main(argv, function (err) {
+        cli.main(argv, function (err, verbose) {
             if (err) {
-                logerror(err);
+                logerror(err, verbose);
                 process.exit(err.exitStatus || 1);
             }
             process.exit(0);

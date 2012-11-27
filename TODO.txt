@@ -1,13 +1,14 @@
 - other endpoints:
 
-    cli list ...    # ListImages (done-ish)
-    cli get         # GetImage (aliases 'info' and 'show' for compat with imgadm and vmadm)
-    cli getfile     # GetImageFile
-    cli delete      # DeleteImage
+    cli list ...    # [done] ListImages
+    cli get         # [done] GetImage (aliases 'info' and 'show' for compat with imgadm and vmadm)
+    cli getfile     # [part] GetImageFile
+    cli delete      # [done] DeleteImage
     cli create      # CreateImage
     cli addfile     # AddImageFile
     cli activate    # ActivateImage
     cli update      # UpdateImage (NYI)
+    cli state       # [done] AdminGetState
 - man page
 - bash completion
 - 'cli images' filtering options
