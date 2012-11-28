@@ -2,9 +2,9 @@
 
     cli list ...    # [done] ListImages
     cli get         # [done] GetImage (aliases 'info' and 'show' for compat with imgadm and vmadm)
-    cli getfile     # [part] GetImageFile
+    cli getfile     # [mostly, 'ext' support remains] GetImageFile
     cli delete      # [done] DeleteImage
-    cli create      # CreateImage
+    cli create      # [done] CreateImage
     cli addfile     # AddImageFile
     cli activate    # ActivateImage
     cli update      # UpdateImage (NYI)
