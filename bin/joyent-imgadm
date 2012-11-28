@@ -35,7 +35,8 @@ var DESCRIPTION = (
 
 function logerror(err, verbose) {
     if (err.code) {
-        console.error(format('%s: %s: %s', NAME, err.code, err.message));
+        console.error(format('%s: error (%s): %s', NAME, err.code,
+            err.message));
     } else {
         console.error(format('%s: error: %s', NAME, err.message));
     }
