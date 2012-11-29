@@ -12,7 +12,8 @@
     "nopt": "2.0.0",
     "async": "0.1.22",
     "verror": "1.3.4",
-    "extsprintf": "1.0.1"
+    "extsprintf": "1.0.1",
+    "progress": "0.1.0"
   },
   "devDependencies": {
     "jshint": "0.5",
