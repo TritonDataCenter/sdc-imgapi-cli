@@ -1,16 +1,7 @@
-- other endpoints:
-
-    cli list ...    # [done] ListImages
-    cli get         # [done] GetImage (aliases 'info' and 'show' for compat with imgadm and vmadm)
-    cli getfile     # [mostly, 'ext' support remains] GetImageFile
-    cli delete      # [done] DeleteImage
-    cli create      # [done] CreateImage
-    cli addfile     # [done] AddImageFile
-    cli activate    # ActivateImage
-    cli update      # UpdateImage (NYI)
-    cli state       # [done] AdminGetState
+- cli getfile     # [mostly, 'ext' support remains] GetImageFile
 - one step create/addfile/activate for 'create':
     cli create -m manifest.json -f file
+- missing IMGAPI endpoints: UpdateImage (cli update), etc.
 - man page
 - bash completion
 - 'cli images' filtering options
