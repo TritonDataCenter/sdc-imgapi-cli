@@ -5,10 +5,12 @@
     cli getfile     # [mostly, 'ext' support remains] GetImageFile
     cli delete      # [done] DeleteImage
     cli create      # [done] CreateImage
-    cli addfile     # AddImageFile
+    cli addfile     # [done] AddImageFile
     cli activate    # ActivateImage
     cli update      # UpdateImage (NYI)
     cli state       # [done] AdminGetState
+- one step create/addfile/activate for 'create':
+    cli create -m manifest.json -f file
 - man page
 - bash completion
 - 'cli images' filtering options
