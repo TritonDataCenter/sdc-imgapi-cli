@@ -19,6 +19,9 @@
     "jshint": "0.5",
     "nodeunit": "0.7.4"
   },
+  "scripts": {
+    "joyent-imgadm": "./bin/joyent-imgadm"
+  },
   "engines": {
     "node": ">=0.8"
   }

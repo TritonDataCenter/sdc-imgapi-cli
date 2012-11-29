@@ -13,8 +13,7 @@ var CLI = require('../lib/cli');
 //---- globals
 
 var NAME = 'joyent-imgadm';
-var URL = 'https://64.30.133.39';
-//var URL = 'https://images.joyent.com';
+var URL = 'https://images.joyent.com';
 var DESCRIPTION = (
     'Manage images on the central Joyent Images API (https://images.joyent.com).\n'
     + '\n'
