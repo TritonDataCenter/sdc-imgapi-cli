@@ -23,6 +23,13 @@ Note that these two tools are distinct from the `imgadm` tool available in all
 SmartOS installations.
 
 
+# Installation
+
+The 'joyent-imgadm' tool can be installed like so:
+
+    npm install -g git+ssh://git@git.joyent.com/imgapi-cli.git
+
+
 # Development
 
 TODO
