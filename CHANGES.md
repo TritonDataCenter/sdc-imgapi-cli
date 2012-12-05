@@ -2,6 +2,8 @@
 
 ## 1.1.0
 
+- Add '-c COMPRESSION' support for 'addfile', 'create' and 'import'
+  subcommands.
 - Add 'import' subcmd.
 
 
