@@ -1,4 +1,10 @@
-# imgadm-cli, joyent-imgadm, sdc-imgadm Changelog
+# imgadm-cli, joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
+
+## 1.1.1
+
+- Change cli to report a "ClientError" when getting an IMGAPI client error.
+  Previously these were reported as "InternalError"s.
+
 
 ## 1.1.0
 

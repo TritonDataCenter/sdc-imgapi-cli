@@ -1,11 +1,11 @@
 {
   "name": "imgapi-cli",
   "description": "a CLI for an IMGAPI (https://mo.joyent.com/docs/imgapi/master/)",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "Joyent (joyent.com)",
   "private": true,
   "dependencies": {
-    "sdc-clients": "git+ssh://git@git.joyent.com:node-sdc-clients.git#5d75173",
+    "sdc-clients": "git+ssh://git@git.joyent.com:node-sdc-clients.git#aa53b07",
     "bunyan": "0.17.0",
     "assert-plus": "0.1.2",
     "mkdirp": "0.3.4",
