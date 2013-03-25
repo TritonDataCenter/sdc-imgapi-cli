@@ -13,6 +13,7 @@ var CLI = require('../lib/cli');
 //---- globals
 
 var NAME = 'imgapi-cli';
+var AUTH = process.env.IMGAPI_CLI_AUTH || 'signature';
 var URL = process.env.IMGAPI_CLI_URL || 'http://localhost:8080';
 var DESCRIPTION = 'A demo imgapi-cli instance for talking to an IMGAPI.\n'
     + 'This speaks to an IMGAPI running at <' + URL + '>.\n';
@@ -40,9 +41,7 @@ function main(argv) {
         name: NAME,
         url: URL,
         description: DESCRIPTION,
-        //auth: 'none',
-        //auth: 'basic',
-        auth: 'signature',
+        auth: AUTH,
         envopts: [
             ['IMGAPI_CLI_IDENTITY', 'identity'],
             ['IMGAPI_CLI_KEY_ID', 'identity'],
