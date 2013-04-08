@@ -20,7 +20,7 @@ var CLI = require('../lib/cli');
 
 var NAME = 'updates-imgadm';
 var URL = 'https://updates.joyent.us';
-//var URL = 'https://10.2.172.75';
+//var URL = 'https://10.2.172.99';
 var DESCRIPTION = (
     'Manage images on the central Joyent SDC Updates repo (https://updates.joyent.us).\n'
     + '\n'
