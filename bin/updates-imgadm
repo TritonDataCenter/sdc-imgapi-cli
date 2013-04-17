@@ -19,7 +19,7 @@ var CLI = require('../lib/cli');
 //---- globals
 
 var NAME = 'updates-imgadm';
-var URL = 'https://updates.joyent.us';
+var URL = process.env.UPDATES_IMGADM_URL || 'https://updates.joyent.us';
 //var URL = 'https://10.2.172.99';
 var DESCRIPTION = (
     'Manage images on the central Joyent SDC Updates repo (https://updates.joyent.us).\n'
