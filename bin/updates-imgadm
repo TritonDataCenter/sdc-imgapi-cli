@@ -11,8 +11,6 @@
  */
 
 var format = require('util').format;
-var mod_url = require('url');
-var execFile = require('child_process').execFile;
 var CLI = require('../lib/cli');
 
 
@@ -51,65 +49,27 @@ function logerror(err, verbose) {
     }
 }
 
-/**
- * If this is running in the smartos GZ, then DNS isn't enabled. Manually
- * resolve the IP.
- */
-function getUrl(callback) {
-    if (process.platform !== 'sunos') {
-        return callback(null, URL);
-    }
-    execFile('/usr/bin/zonename', [], function (zErr, zStdout, zStderr) {
-        if (zErr) {
-            return callback(new Error('failed to get zonename: ' + zStderr));
-        }
-        var zonename = zStdout.trim();
-        if (zonename !== 'global') {
-            return callback(null, URL);
-        }
-
-        var parsed = mod_url.parse(URL);
-        execFile('/usr/sbin/dig', [parsed.host, '+short'],
-            function (dErr, dStdout, dStderr) {
-                if (dErr) {
-                    return callback(new Error(format(
-                        'failed to dig IP for %s: %s', parsed.host, dStderr)));
-                }
-                var ip = dStdout.trim().split(/\n/g)[0];
-                var url = URL.replace('updates.joyent.com', ip);
-                callback(null, url);
-            }
-        );
-    });
-}
-
 
 
 //---- mainline
 
 function main(argv) {
-    getUrl(function (urlErr, url) {
-        if (urlErr) {
-            logerror(urlErr);
-            process.exit(1);
+    var cli = new CLI({
+        name: NAME,
+        url: URL,
+        description: DESCRIPTION,
+        auth: 'signature',
+        envopts: [
+            ['UPDATES_IMGADM_IDENTITY', 'identity'],
+            ['UPDATES_IMGADM_USER', 'user'],
+        ]
+    });
+    cli.main(argv, function (err, verbose) {
+        if (err) {
+            logerror(err, verbose);
+            process.exit(err.exitStatus || 1);
         }
-        var cli = new CLI({
-            name: NAME,
-            url: url,
-            description: DESCRIPTION,
-            auth: 'signature',
-            envopts: [
-                ['UPDATES_IMGADM_IDENTITY', 'identity'],
-                ['UPDATES_IMGADM_USER', 'user'],
-            ]
-        });
-        cli.main(argv, function (err, verbose) {
-            if (err) {
-                logerror(err, verbose);
-                process.exit(err.exitStatus || 1);
-            }
-            process.exit(0);
-        });
+        process.exit(0);
     });
 }
 
