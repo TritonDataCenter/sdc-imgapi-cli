@@ -1,5 +1,9 @@
 # imgadm-cli, joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
 
+## 1.1.2
+
+- Minor improvements to '*-imgadm enable|disable' help output.
+
 ## 1.1.1
 
 - Change cli to report a "ClientError" when getting an IMGAPI client error.

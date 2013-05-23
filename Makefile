@@ -77,6 +77,8 @@ publish: release
 	mkdir -p $(BITS_DIR)/$(NAME)
 	cp $(TOP)/$(RELEASE_TARBALL) $(BITS_DIR)/$(NAME)/$(RELEASE_TARBALL)
 
+DISTCLEAN_FILES += node_modules
+
 
 include ./tools/mk/Makefile.deps
 ifeq ($(shell uname -s),SunOS)
