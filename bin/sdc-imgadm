@@ -17,7 +17,9 @@ var DESCRIPTION = (
     'Manage images in this SmartDataCenter\'s Images API (IMGAPI).\n'
     );
 
-var config = require('/opt/smartdc/sdc/etc/config.json');
+// In the 'sdc' zone this script is at
+// ".../opt/smartdc/sdc/node_modules/imgapi-cli/bin/sdc-imgadm".
+var config = require('../../../etc/config.json');
 
 
 //---- support stuff
