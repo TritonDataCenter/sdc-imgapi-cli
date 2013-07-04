@@ -1,5 +1,12 @@
 # imgadm-cli, joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
 
+
+## 1.2.0
+
+- [IMGAPI-241, backward incompatible] Change to the new http-signature
+  Authorization header format per
+  <http://tools.ietf.org/html/draft-cavage-http-signatures-00>
+
 ## 1.1.2
 
 - Minor improvements to '*-imgadm enable|disable' help output.
