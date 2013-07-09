@@ -19,6 +19,7 @@ NODEUNIT	:= ./node_modules/.bin/nodeunit
 # We're using the 'gz' prebuilt node here because we'll be placing these
 # builds down in the SmartOS gz.
 ifeq ($(shell uname -s),SunOS)
+	NODE_PREBUILT_CC_VERSION=4.6.2
 	NODE_PREBUILT_VERSION=v0.8.20
 	NODE_PREBUILT_TAG=gz
 endif
