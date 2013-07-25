@@ -8,7 +8,6 @@
 # Vars, Tools, Files, Flags
 #
 NAME		:= imgapi-cli
-DOC_FILES	 = index.restdown
 JS_FILES	:= $(shell find lib test -name '*.js' | grep -v '/tmp/')
 JSL_CONF_NODE	 = tools/jsl.node.conf
 JSL_FILES_NODE	 = $(JS_FILES)
