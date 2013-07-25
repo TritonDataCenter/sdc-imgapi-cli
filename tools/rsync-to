@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# Rsync the build in this working copy to the 'sdc' zone on the
+# given HN.
+#
+
+#set -o xtrace
+set -o errexit
+
+TOP=$(cd $(dirname $0)/../; pwd)
+NODE=$1
+
+if [[ -z "$SDC_ZONE" ]]; then
+    SDC_ZONE=$(ssh $NODE vmadm lookup -1 tags.smartdc_role=sdc)
+fi
+echo "SDC_ZONE: $SDC_ZONE"
+
+extraOpts=
+if [[ $(uname -s) != "SunOS" ]]; then
+    extraOpts="--exclude *.node --exclude build"
+#else
+#    # Clean node_modules everytime.
+#    ssh $NODE rm -rf /zones/$SDC_ZONE/root/opt/smartdc/sdc/node_modules/imgapi-cli/node_modules
+fi
+
+rsync -av ${TOP}/ \
+    $NODE:/zones/$SDC_ZONE/root/opt/smartdc/sdc/node_modules/imgapi-cli/ \
+    $extraOpts \
+    --exclude .git/ \
+    --exclude /deps/ \
+    --exclude /docs/ \
+    --exclude /tools/ \
+    --exclude /tmp/
