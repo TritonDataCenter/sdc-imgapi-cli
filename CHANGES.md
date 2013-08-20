@@ -1,5 +1,10 @@
 # imgadm-cli, joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
 
+## 1.2.2
+
+- [TOOLS-281]: '*-imgadm list --latest' to list just the latest (by `published_at`) images
+  in a owner/name set.
+
 ## 1.2.1
 
 - [IMGAPI-215] Default '*-imgadm list' output now includes a 'FLAGS'
