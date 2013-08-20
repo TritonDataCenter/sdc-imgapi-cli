@@ -1,5 +1,10 @@
 # imgadm-cli, joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
 
+## 1.2.1
+
+- [IMGAPI-215] Default '*-imgadm list' output now includes a 'FLAGS'
+  column that will show 'I' for incremental images, 'P' for public
+  ones and 'X' for images with 'state' other than 'active'.
 
 ## 1.2.0
 
