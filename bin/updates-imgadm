@@ -59,9 +59,10 @@ function main(argv) {
         url: URL,
         description: DESCRIPTION,
         auth: 'signature',
+        excludeCmds: ['export'],
         envopts: [
             ['UPDATES_IMGADM_IDENTITY', 'identity'],
-            ['UPDATES_IMGADM_USER', 'user'],
+            ['UPDATES_IMGADM_USER', 'user']
         ]
     });
     cli.main(argv, function (err, verbose) {

@@ -54,10 +54,11 @@ function main(argv) {
         url: URL,
         description: DESCRIPTION,
         auth: 'signature',
+        excludeCmds: ['export'],
         envopts: [
             ['JOYENT_IMGADM_IDENTITY', 'identity'],
             //['JOYENT_IMGADM_KEY_ID', 'identity'],
-            ['JOYENT_IMGADM_USER', 'user'],
+            ['JOYENT_IMGADM_USER', 'user']
             //['JOYENT_IMGADM_ACCOUNT', 'user']
         ]
     });
