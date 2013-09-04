@@ -1,7 +1,7 @@
 {
   "name": "imgapi-cli",
   "description": "a CLI for an IMGAPI (https://mo.joyent.com/docs/imgapi/master/)",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "author": "Joyent (joyent.com)",
   "private": true,
   "dependencies": {

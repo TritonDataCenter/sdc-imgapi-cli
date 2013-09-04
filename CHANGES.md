@@ -1,5 +1,12 @@
 # imgadm-cli, joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
 
+## 1.2.3
+
+- [IMGAPI-249]: Added suport for 'export' command.
+- [IMGAPI-249]: CLI constructor now takes an array option called 'excludeCmds'
+  which allows imgadm scripts to exclude specific commands to being exposed as
+  needed. joyent-imgadm and updates-imgadm don't expose 'export' by default.
+
 ## 1.2.2
 
 - [TOOLS-281]: '*-imgadm list --latest' to list just the latest (by `published_at`) images
