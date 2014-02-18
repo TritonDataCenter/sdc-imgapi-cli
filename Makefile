@@ -15,22 +15,7 @@ JSSTYLE_FILES	 = $(JS_FILES)
 JSSTYLE_FLAGS	 = -f tools/jsstyle.conf
 NODEUNIT	:= ./node_modules/.bin/nodeunit
 
-ifeq ($(shell uname -s),SunOS)
-	# sdc-smartos/1.6.3
-	NODE_PREBUILT_IMAGE=fd2cc906-8938-11e3-beab-4359c665ac99
-	NODE_PREBUILT_VERSION=v0.8.25
-	NODE_PREBUILT_TAG=zone
-endif
-
-
 include ./tools/mk/Makefile.defs
-ifeq ($(shell uname -s),SunOS)
-	include ./tools/mk/Makefile.node_prebuilt.defs
-else
-	NPM_EXEC :=
-	NPM = npm
-endif
-include ./tools/mk/Makefile.smf.defs
 
 RELEASE_TARBALL	:= $(NAME)-pkg-$(STAMP).tar.bz2
 TMPDIR          := /tmp/$(STAMP)
@@ -41,14 +26,11 @@ TMPDIR          := /tmp/$(STAMP)
 # Targets
 #
 .PHONY: all
-all: | $(NODEUNIT)
-	$(NPM) install
-
-$(NODEUNIT): | $(NPM_EXEC)
-	$(NPM) install
+all:
+	npm install
 
 .PHONY: test
-test: | $(NODEUNIT)
+test:
 	$(NODEUNIT) test/*.test.js
 
 .PHONY: release
@@ -80,8 +62,4 @@ DISTCLEAN_FILES += node_modules
 
 
 include ./tools/mk/Makefile.deps
-ifeq ($(shell uname -s),SunOS)
-	include ./tools/mk/Makefile.node_prebuilt.targ
-endif
-include ./tools/mk/Makefile.smf.targ
 include ./tools/mk/Makefile.targ
