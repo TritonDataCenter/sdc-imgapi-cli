@@ -16,6 +16,8 @@ JSSTYLE_FLAGS	 = -f tools/jsstyle.conf
 NODEUNIT	:= ./node_modules/.bin/nodeunit
 
 ifeq ($(shell uname -s),SunOS)
+	# sdc-smartos/1.6.3
+	NODE_PREBUILD_IMAGE=fd2cc906-8938-11e3-beab-4359c665ac99
 	NODE_PREBUILT_VERSION=v0.8.25
 	NODE_PREBUILT_TAG=zone
 endif
