@@ -17,9 +17,13 @@ var DESCRIPTION = (
     'Manage images in this SmartDataCenter\'s Images API (IMGAPI).\n'
     );
 
-// In the 'sdc' zone this script is at
-// ".../opt/smartdc/sdc/node_modules/imgapi-cli/bin/sdc-imgadm".
-var config = require('../../../etc/config.json');
+var URL = process.env.SDC_IMGADM_URL;
+if (!URL) {
+    // In the 'sdc' zone this script is at
+    // ".../opt/smartdc/sdc/node_modules/imgapi-cli/bin/sdc-imgadm".
+    var config = require('../../../etc/config.json');
+    URL = 'http://' + config.imgapi_domain;
+}
 
 
 //---- support stuff
@@ -42,7 +46,7 @@ function logerror(err, verbose) {
 function main(argv) {
     var cli = new CLI({
         name: NAME,
-        url: 'http://' + config.imgapi_domain,
+        url: URL,
         description: DESCRIPTION,
         auth: 'none'
     });
