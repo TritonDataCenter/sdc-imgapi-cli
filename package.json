@@ -20,7 +20,8 @@
     "nodeunit": "0.8.1"
   },
   "bin": {
-    "joyent-imgadm": "./bin/joyent-imgadm"
+    "joyent-imgadm": "./bin/joyent-imgadm",
+    "sdc-imgadm": "./bin/sdc-imgadm"
   },
   "engines": {
     "node": ">=0.8"
