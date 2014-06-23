@@ -1,4 +1,11 @@
-# imgadm-cli, joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
+# joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
+
+## 1.2.4
+
+- Support *unsetting* image manifest fields via the CLI, e.g.:
+
+        # remove the 'description' for this image
+        sdc-imgadm update UUID description=
 
 ## 1.2.3
 

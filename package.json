@@ -1,6 +1,6 @@
 {
   "name": "imgapi-cli",
-  "description": "a CLI for an IMGAPI (https://mo.joyent.com/docs/imgapi/master/)",
+  "description": "a CLI for an SDC's IMGAPI (https://mo.joyent.com/docs/imgapi/master/)",
   "version": "1.2.4",
   "author": "Joyent (joyent.com)",
   "private": true,
@@ -21,7 +21,8 @@
   },
   "bin": {
     "joyent-imgadm": "./bin/joyent-imgadm",
-    "sdc-imgadm": "./bin/sdc-imgadm"
+    "sdc-imgadm": "./bin/sdc-imgadm",
+    "updates-imgadm": "./bin/updates-imgadm"
   },
   "engines": {
     "node": ">=0.8"
