@@ -33,6 +33,7 @@ var DESCRIPTION = (
     + '\n'
     + 'If setup correctly, `updates-imgadm ping` should work (prints "pong").\n'
     );
+var FEATURES = ['channels'];
 
 
 //---- support stuff
@@ -59,7 +60,7 @@ function main(argv) {
         url: URL,
         description: DESCRIPTION,
         auth: 'signature',
-        excludeCmds: ['export'],
+        features: FEATURES,
         envopts: [
             ['UPDATES_IMGADM_IDENTITY', 'identity'],
             ['UPDATES_IMGADM_USER', 'user']

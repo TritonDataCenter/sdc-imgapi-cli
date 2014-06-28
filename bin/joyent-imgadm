@@ -28,6 +28,7 @@ var DESCRIPTION = (
     + '\n'
     + 'If setup correctly, `joyent-imgadm ping` should work (prints "pong").\n'
     );
+var FEATURES = [];
 
 
 //---- support stuff
@@ -54,7 +55,7 @@ function main(argv) {
         url: URL,
         description: DESCRIPTION,
         auth: 'signature',
-        excludeCmds: ['export'],
+        features: FEATURES,
         envopts: [
             ['JOYENT_IMGADM_IDENTITY', 'identity'],
             //['JOYENT_IMGADM_KEY_ID', 'identity'],
