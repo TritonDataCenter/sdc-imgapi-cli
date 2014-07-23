@@ -1,5 +1,9 @@
 # joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
 
+## 1.2.5
+
+- IMGAPI-421: '*-imgadm get-file ...' saved file is sometimes incomplete
+
 ## 1.2.4
 
 - Support *unsetting* image manifest fields via the CLI, e.g.:
