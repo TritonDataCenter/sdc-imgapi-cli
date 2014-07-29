@@ -46,9 +46,8 @@ function main(argv) {
         features: FEATURES,
         envopts: [
             ['IMGAPI_CLI_IDENTITY', 'identity'],
-            ['IMGAPI_CLI_KEY_ID', 'identity'],
             ['IMGAPI_CLI_USER', 'user'],
-            ['IMGAPI_CLI_ACCOUNT', 'user']
+            ['IMGAPI_CLI_CHANNEL', 'channel']
         ]
     });
     cli.main(argv, function (err, verbose) {

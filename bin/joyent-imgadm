@@ -58,9 +58,7 @@ function main(argv) {
         features: FEATURES,
         envopts: [
             ['JOYENT_IMGADM_IDENTITY', 'identity'],
-            //['JOYENT_IMGADM_KEY_ID', 'identity'],
             ['JOYENT_IMGADM_USER', 'user']
-            //['JOYENT_IMGADM_ACCOUNT', 'user']
         ]
     });
     cli.main(argv, function (err, verbose) {
