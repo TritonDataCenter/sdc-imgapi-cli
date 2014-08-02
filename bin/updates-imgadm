@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /*
- * Copyright (c) 2012, Joyent, Inc. All rights reserved.
+ * Copyright (c) 2014, Joyent, Inc. All rights reserved.
  *
  * CLI for working with the central Joyent SDC Updates Image API:
  *      https://updates.joyent.com
@@ -18,7 +18,6 @@ var CLI = require('../lib/cli');
 
 var NAME = 'updates-imgadm';
 var URL = process.env.UPDATES_IMGADM_URL || 'https://updates.joyent.com';
-//var URL = 'https://64.30.133.250';
 var DESCRIPTION = (
     'Manage images on the central Joyent SDC Updates repo (https://updates.joyent.com).\n'
     + '\n'
@@ -33,6 +32,7 @@ var DESCRIPTION = (
     + '\n'
     + 'If setup correctly, `updates-imgadm ping` should work (prints "pong").\n'
     );
+var FEATURES = ['channels'];
 
 
 //---- support stuff
@@ -59,10 +59,11 @@ function main(argv) {
         url: URL,
         description: DESCRIPTION,
         auth: 'signature',
-        excludeCmds: ['export'],
+        features: FEATURES,
         envopts: [
             ['UPDATES_IMGADM_IDENTITY', 'identity'],
-            ['UPDATES_IMGADM_USER', 'user']
+            ['UPDATES_IMGADM_USER', 'user'],
+            ['UPDATES_IMGADM_CHANNEL', 'channel']
         ]
     });
     cli.main(argv, function (err, verbose) {

@@ -16,6 +16,7 @@ var NAME = 'sdc-imgadm';
 var DESCRIPTION = (
     'Manage images in this SmartDataCenter\'s Images API (IMGAPI).\n'
     );
+var FEATURES = ['export'];
 
 var URL = process.env.SDC_IMGADM_URL;
 if (!URL) {
@@ -48,6 +49,7 @@ function main(argv) {
         name: NAME,
         url: URL,
         description: DESCRIPTION,
+        features: FEATURES,
         auth: 'none'
     });
     cli.main(argv, function (err, verbose) {

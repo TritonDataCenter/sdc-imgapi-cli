@@ -17,6 +17,7 @@ var AUTH = process.env.IMGAPI_CLI_AUTH || 'signature';
 var URL = process.env.IMGAPI_CLI_URL || 'http://localhost:8080';
 var DESCRIPTION = 'A demo imgapi-cli instance for talking to an IMGAPI.\n'
     + 'This speaks to an IMGAPI running at <' + URL + '>.\n';
+var FEATURES = ['export', 'channels'];
 
 
 //---- support stuff
@@ -42,11 +43,11 @@ function main(argv) {
         url: URL,
         description: DESCRIPTION,
         auth: AUTH,
+        features: FEATURES,
         envopts: [
             ['IMGAPI_CLI_IDENTITY', 'identity'],
-            ['IMGAPI_CLI_KEY_ID', 'identity'],
             ['IMGAPI_CLI_USER', 'user'],
-            ['IMGAPI_CLI_ACCOUNT', 'user']
+            ['IMGAPI_CLI_CHANNEL', 'channel']
         ]
     });
     cli.main(argv, function (err, verbose) {

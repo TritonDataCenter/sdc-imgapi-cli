@@ -1,5 +1,14 @@
 # joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
 
+## 1.3.0
+
+- Support for IMGAPI server channels. Examples:
+
+        updates-imgadm channels
+        updates-imgadm list -o uuid,name,channels
+        updates-imgadm -C release list
+        sdc-imgadm import $uuid -S https://updates.joyent.com?channel=staging
+
 ## 1.2.5
 
 - IMGAPI-421: '*-imgadm get-file ...' saved file is sometimes incomplete
