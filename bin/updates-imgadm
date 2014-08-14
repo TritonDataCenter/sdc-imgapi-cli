@@ -64,7 +64,8 @@ function main(argv) {
             ['UPDATES_IMGADM_IDENTITY', 'identity'],
             ['UPDATES_IMGADM_USER', 'user'],
             ['UPDATES_IMGADM_CHANNEL', 'channel']
-        ]
+        ],
+        connectTimeout: 10000
     });
     cli.main(argv, function (err, verbose) {
         if (err) {

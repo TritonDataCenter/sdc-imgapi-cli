@@ -48,7 +48,8 @@ function main(argv) {
             ['IMGAPI_CLI_IDENTITY', 'identity'],
             ['IMGAPI_CLI_USER', 'user'],
             ['IMGAPI_CLI_CHANNEL', 'channel']
-        ]
+        ],
+        connectTimeout: 10000
     });
     cli.main(argv, function (err, verbose) {
         if (err) {

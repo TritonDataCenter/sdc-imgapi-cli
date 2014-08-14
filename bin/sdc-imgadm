@@ -50,7 +50,8 @@ function main(argv) {
         url: URL,
         description: DESCRIPTION,
         features: FEATURES,
-        auth: 'none'
+        auth: 'none',
+        connectTimeout: 4000
     });
     cli.main(argv, function (err, verbose) {
         if (err) {

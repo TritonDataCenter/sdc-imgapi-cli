@@ -59,7 +59,8 @@ function main(argv) {
         envopts: [
             ['JOYENT_IMGADM_IDENTITY', 'identity'],
             ['JOYENT_IMGADM_USER', 'user']
-        ]
+        ],
+        connectTimeout: 10000
     });
     cli.main(argv, function (err, verbose) {
         if (err) {
