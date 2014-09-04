@@ -76,7 +76,7 @@
 - Make joyent-imgadm an exported 'bin'. I.e. use this to install the
   'joyent-imgadm' tool:
 
-        npm install -g git+ssh://git@git.joyent.com:imgapi-cli.git
+        npm install -g git+ssh://git@github.com:joyent/sdc-imgapi-cli.git
 
 ## 1.0.0
 
