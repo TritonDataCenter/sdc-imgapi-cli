@@ -8,19 +8,18 @@
     Copyright (c) 2014, Joyent, Inc.
 -->
 
-# a CLI for the IMGAPI
+# sdc-imgapi-cli
 
-Repository: <git@git.joyent.com:imgapi-cli.git>
-Browsing: <https://mo.joyent.com/imgapi-cli>
-Who: Trent Mick
-Docs: <https://mo.joyent.com/docs/imgapi-cli>
-Tickets/bugs: <https://devhub.joyent.com/jira/browse/IMGAPI>
+This is a CLI library that allows interacting with an
+[IMGAPI](https://github.com/joyent/sdc-imgapi) instance.
 
+This repository is part of the Joyent SmartDataCenter project (SDC).  For
+contribution guidelines, issues, and general documentation, visit the main
+[SDC](http://github.com/joyent/sdc) project page.
 
 # Overview
 
-There are typically two instances of the
-[IMGAPI](https://mo.joyent.com/docs/imgapi/master/) with which we interact:
+There are typically two IMGAPI instances with which we interact:
 
 1. <https://images.joyent.com> The central repository of Joyent-vetted images
    for using on SmartOS instances and in SDC setups. There is a `joyent-imgadm`
@@ -32,14 +31,9 @@ Both `joyent-imgadm` and `sdc-imgadm` use the imgapi-cli tools from this repo.
 Note that these two tools are distinct from the `imgadm` tool available in all
 SmartOS installations.
 
-
 # Installation
 
 The 'joyent-imgadm' tool can be installed like so:
 
-    npm install -g git+ssh://git@git.joyent.com/imgapi-cli.git
+    npm install -g git+ssh://git@github.com:joyent/sdc-imgapi-cli.git
 
-
-# Development
-
-TODO
