@@ -26,7 +26,7 @@ NODEUNIT	:= ./node_modules/.bin/nodeunit
 include ./tools/mk/Makefile.defs
 
 RELEASE_TARBALL	:= $(NAME)-pkg-$(STAMP).tar.bz2
-TMPDIR          := /tmp/$(STAMP)
+RELSTAGEDIR          := /tmp/$(STAMP)
 
 
 
@@ -44,7 +44,7 @@ test:
 .PHONY: release
 release: all
 	@echo "Building $(RELEASE_TARBALL)"
-	mkdir -p $(TMPDIR)/$(NAME)
+	mkdir -p $(RELSTAGEDIR)/$(NAME)
 	cp -r \
 		$(TOP)/bin \
 		$(TOP)/build \
@@ -53,9 +53,9 @@ release: all
 		$(TOP)/package.json \
 		$(TOP)/README.md \
 		$(TOP)/test \
-		$(TMPDIR)/$(NAME)
-	(cd $(TMPDIR) && $(TAR) -jcf $(TOP)/$(RELEASE_TARBALL) $(NAME))
-	@rm -rf $(TMPDIR)
+		$(RELSTAGEDIR)/$(NAME)
+	(cd $(RELSTAGEDIR) && $(TAR) -jcf $(TOP)/$(RELEASE_TARBALL) $(NAME))
+	@rm -rf $(RELSTAGEDIR)
 
 .PHONY: publish
 publish: release
