@@ -37,3 +37,29 @@ The 'joyent-imgadm' tool can be installed like so:
 
     npm install -g git+ssh://git@github.com:joyent/sdc-imgapi-cli.git
 
+# Development
+
+Typically sdc-imgapi-cli development on a local SDC instance is done by:
+
+- making edits to a clone of sdc-imgapi-cli.git on a Mac (likely Linux too, but
+  that's untested) or a SmartOS development zone,
+
+        git clone git@github.com:joyent/sdc-imgapi-cli.git
+        cd sdc-imgapi-cli
+        git submodule update --init   # not necessary first time
+        vi
+
+- building:
+
+        make all
+        make check
+
+- syncing changes to a running SDC (typically a COAL running locally in VMWare)
+  via:
+        ./tools/rsync-to coal
+
+- then testing changes in that SDC (e.g. COAL) by using the sdc-imgadm tool. For
+  example, if changes are made to the `list` command then they can immediately
+  be observed by running the following command in the SDC headnode:
+
+  		sdc-imgadm list
