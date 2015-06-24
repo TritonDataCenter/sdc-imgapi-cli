@@ -10,6 +10,11 @@
 
 # joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
 
+
+## 1.3.1
+
+- IMGAPI-501: '*-imgadm update ...' doesn't allow property=value and top-level opts at the same time
+
 ## 1.3.0
 
 - Support for IMGAPI server channels. Examples:
