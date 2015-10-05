@@ -10,6 +10,9 @@
 
 # joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
 
+## 2.0.0
+
+- Get the much cleaned up http-signature auth, keyId handling, etc. from PUBAPI-1146.
 
 ## 1.3.1
 
