@@ -10,6 +10,10 @@
 
 # joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
 
+## 2.0.1
+
+- Fix for PUBAPI-1163 to avoid errors caused by multiple parallel sshpk versions
+
 ## 2.0.0
 
 - Get the much cleaned up http-signature auth, keyId handling, etc. from PUBAPI-1146.

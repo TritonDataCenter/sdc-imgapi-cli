@@ -1,7 +1,7 @@
 {
   "name": "imgapi-cli",
   "description": "a CLI for an SDC's IMGAPI (https://mo.joyent.com/docs/imgapi/master/)",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Joyent (joyent.com)",
   "private": true,
   "dependencies": {
@@ -12,7 +12,7 @@
     "mkdirp": "0.3.5",
     "nopt": "2.0.0",
     "progbar": "0.0.2",
-    "sdc-clients": "9.0.1",
+    "sdc-clients": "9.0.3",
     "strsplit": "1.0.0",
     "tabula": "1.2.2",
     "vasync": "1.5.0",
