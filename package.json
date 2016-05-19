@@ -1,6 +1,6 @@
 {
   "name": "imgapi-cli",
-  "description": "a CLI for an SDC's IMGAPI (https://mo.joyent.com/docs/imgapi/master/)",
+  "description": "a CLI for an Triton's IMGAPI (https://images.joyent.com/docs/)",
   "version": "2.1.0",
   "author": "Joyent (joyent.com)",
   "private": true,
