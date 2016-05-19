@@ -1,14 +1,10 @@
-<!--
-    This Source Code Form is subject to the terms of the Mozilla Public
-    License, v. 2.0. If a copy of the MPL was not distributed with this
-    file, You can obtain one at http://mozilla.org/MPL/2.0/.
--->
-
-<!--
-    Copyright (c) 2014, Joyent, Inc.
--->
-
 # joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
+
+## 2.1.0
+
+- IMGAPI-536: Adds `*-imgadm change-stor ...` to change the backend storage of
+  given image files. Adds `*-imgadm list -A ...` and `*-imgadm get -A` option
+  to include "admin" fields (currently just `files.*.stor`).
 
 ## 2.0.1
 
