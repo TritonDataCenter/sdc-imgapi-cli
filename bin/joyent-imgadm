@@ -6,7 +6,7 @@
  */
 
 /*
- * Copyright (c) 2014, Joyent, Inc.
+ * Copyright 2016 Joyent, Inc.
  */
 
 /*
@@ -21,7 +21,7 @@ var CLI = require('../lib/cli');
 //---- globals
 
 var NAME = 'joyent-imgadm';
-var URL = 'https://images.joyent.com';
+var URL = process.env.JOYENT_IMGADM_URL || 'https://images.joyent.com';
 var DESCRIPTION = (
     'Manage images on the central Joyent Images API (https://images.joyent.com).\n'
     + '\n'
