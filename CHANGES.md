@@ -1,5 +1,9 @@
 # joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
 
+## 2.1.1
+
+- IMGAPI-576: `JOYENT_IMGADM_URL=<url> joyent-imgadm ...` envvar support
+
 ## 2.1.0
 
 - IMGAPI-536: Adds `*-imgadm change-stor ...` to change the backend storage of
