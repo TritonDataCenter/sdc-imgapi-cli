@@ -1,7 +1,7 @@
 # joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
 
 
-## 2.2.0
+## 2.2.1
 
 - IMGAPI-579: `{joyent,updates,*}-imgadm reload-auth-keys` to call the
   AdminReloadAuthKeys endpoint. This is only relevant against IMGAPI servers
