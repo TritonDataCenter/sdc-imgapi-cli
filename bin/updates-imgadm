@@ -71,7 +71,8 @@ function main(argv) {
         envopts: [
             ['UPDATES_IMGADM_IDENTITY', 'identity'],
             ['UPDATES_IMGADM_USER', 'user'],
-            ['UPDATES_IMGADM_CHANNEL', 'channel']
+            ['UPDATES_IMGADM_CHANNEL', 'channel'],
+            ['UPDATES_IMGADM_INSECURE', 'insecure']
         ],
         connectTimeout: 10000
     });

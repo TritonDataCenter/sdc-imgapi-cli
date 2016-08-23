@@ -66,7 +66,8 @@ function main(argv) {
         features: FEATURES,
         envopts: [
             ['JOYENT_IMGADM_IDENTITY', 'identity'],
-            ['JOYENT_IMGADM_USER', 'user']
+            ['JOYENT_IMGADM_USER', 'user'],
+            ['JOYENT_IMGADM_INSECURE', 'insecure']
         ],
         connectTimeout: 10000
     });

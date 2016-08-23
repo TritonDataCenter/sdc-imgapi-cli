@@ -55,7 +55,8 @@ function main(argv) {
         envopts: [
             ['IMGAPI_CLI_IDENTITY', 'identity'],
             ['IMGAPI_CLI_USER', 'user'],
-            ['IMGAPI_CLI_CHANNEL', 'channel']
+            ['IMGAPI_CLI_CHANNEL', 'channel'],
+            ['IMGAPI_CLI_INSECURE', 'insecure']
         ],
         connectTimeout: 10000
     });
