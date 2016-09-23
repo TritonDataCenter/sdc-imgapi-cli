@@ -1,6 +1,12 @@
 # joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
 
 
+## 2.2.2
+
+- IMGAPI-586: `reload-auth-keys` subcommand: Change the endpoint URL, add the
+  subcommand to the the help output. (Just a patch-level verbump because the
+  old URL was never used on any "master" branch.)
+
 ## 2.2.1
 
 - IMGAPI-579: `{joyent,updates,*}-imgadm reload-auth-keys` to call the
