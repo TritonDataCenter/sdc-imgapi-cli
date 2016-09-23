@@ -3,8 +3,9 @@
 
 ## 2.2.2
 
-- IMGAPI-567: `reload-auth-keys` subcommand: Change the endpoint URL, add the
-  subcommand to the the help output.
+- IMGAPI-586: `reload-auth-keys` subcommand: Change the endpoint URL, add the
+  subcommand to the the help output. (Just a patch-level verbump because the
+  old URL was never used on any "master" branch.)
 
 ## 2.2.1
 
