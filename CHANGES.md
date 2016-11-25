@@ -1,5 +1,8 @@
 # joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
 
+## not yet released
+
+- IMGAPI-603 Support node v4 and later. Drop support for node v0.8.
 
 ## 2.2.2
 

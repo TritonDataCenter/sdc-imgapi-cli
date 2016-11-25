@@ -5,30 +5,16 @@
  */
 
 /*
- * Copyright (c) 2014, Joyent, Inc.
+ * Copyright 2016 Joyent, Inc.
  */
 
 /*
  * Some base imgapi-cli tests.
  */
 
-var format = require('util').format;
 var exec = require('child_process').exec;
+var test = require('tape');
 
-
-// node-tap API
-if (require.cache[__dirname + '/tap4nodeunit.js'])
-    delete require.cache[__dirname + '/tap4nodeunit.js'];
-var tap4nodeunit = require('./tap4nodeunit.js');
-var after = tap4nodeunit.after;
-var before = tap4nodeunit.before;
-var test = tap4nodeunit.test;
-
-
-
-before(function (next) {
-    next();
-});
 
 test('imgapi-cli --version', function (t) {
     exec('./bin/imgapi-cli --version', function (err, stdout, stderr) {

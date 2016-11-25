@@ -5,22 +5,22 @@
   "author": "Joyent (joyent.com)",
   "private": true,
   "dependencies": {
-    "assert-plus": "0.1.5",
-    "async": "0.1.22",
-    "bunyan": "1.3.4",
-    "extsprintf": "1.0.1",
-    "mkdirp": "0.3.5",
+    "assert-plus": "1.0.0",
+    "bunyan": "1.8.5",
+    "extsprintf": "1.3.0",
+    "mkdirp": "0.5.1",
     "nopt": "2.0.0",
-    "progbar": "0.0.2",
-    "sdc-clients": "9.5.1",
+    "progbar": "1.1.1",
+    "sdc-clients": "10.0.3",
     "strsplit": "1.0.0",
-    "tabula": "1.2.2",
-    "vasync": "1.5.0",
-    "verror": "1.3.4"
+    "tabula": "1.8.0",
+    "vasync": "1.6.4",
+    "verror": "1.9.0"
   },
   "devDependencies": {
-    "jshint": "2.1",
-    "nodeunit": "0.8.1"
+    "jshint": "~2.9.4",
+    "nodeunit": "~0.10.2",
+    "tape": "4.6.3"
   },
   "bin": {
     "joyent-imgadm": "./bin/joyent-imgadm",
@@ -28,7 +28,7 @@
     "updates-imgadm": "./bin/updates-imgadm"
   },
   "engines": {
-    "node": ">=0.8"
+    "node": ">=0.10"
   },
   "license": "MPL-2.0"
 }
