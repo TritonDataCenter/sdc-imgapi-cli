@@ -2,6 +2,9 @@
 
 ## not yet released
 
+## 2.2.3
+
+- TOOLS-1636 Fix updates-imgadm et al to flush stdout on exit.
 - IMGAPI-603 Support node v4 and later. Drop support for node v0.8.
 
 ## 2.2.2

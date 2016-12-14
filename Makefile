@@ -31,6 +31,28 @@ all:
 test: | node_modules/.bin/tape
 	node_modules/.bin/tape test/*.test.js
 
+check:: versioncheck
+
+# Ensure CHANGES.md and package.json have the same version.
+.PHONY: versioncheck
+versioncheck:
+	@echo version is: $(shell cat package.json | json version)
+	[[ `cat package.json | json version` == `grep '^## ' CHANGES.md | head -2 | tail -1 | awk '{print $$2}'` ]]
+
+# This repo doesn't publish to npm, so a 'release' is just a tag.
+.PHONY: cutarelease
+cutarelease: versioncheck
+	[[ -z `git status --short` ]]  # If this fails, the working dir is dirty.
+	@which json 2>/dev/null 1>/dev/null && \
+	    ver=$(shell json -f package.json version) && \
+	    echo "** Are you sure you want to tag v$$ver?" && \
+	    echo "** Enter to continue, Ctrl+C to abort." && \
+	    read
+	ver=$(shell cat package.json | json version) && \
+	    date=$(shell date -u "+%Y-%m-%d") && \
+	    git tag -a "v$$ver" -m "version $$ver ($$date)" && \
+	    git push --tags origin
+
 DISTCLEAN_FILES += node_modules
 
 

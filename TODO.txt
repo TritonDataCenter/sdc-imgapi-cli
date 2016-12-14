@@ -1,4 +1,0 @@
-- cli getfile     # [mostly, 'ext' support remains] GetImageFile
-- man page
-- missing IMGAPI endpoints: UpdateImage (cli update), etc.
-- bash completion

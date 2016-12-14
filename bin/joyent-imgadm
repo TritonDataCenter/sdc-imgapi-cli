@@ -11,11 +11,13 @@
 
 /*
  * CLI for working with the central Joyent Images API:
- *      https://images.joyent.com.
+ *      https://images.joyent.com
  */
 
 var format = require('util').format;
+
 var CLI = require('../lib/cli');
+var common = require('../lib/common');
 
 
 //---- globals
@@ -72,11 +74,12 @@ function main(argv) {
         connectTimeout: 10000
     });
     cli.main(argv, function (err, verbose) {
+        var code = 0;
         if (err) {
             logerror(err, verbose);
-            process.exit(err.exitStatus || 1);
+            code = err.exitStatus || 1;
         }
-        process.exit(0);
+        common.softProcessExit(code);
     });
 }
 

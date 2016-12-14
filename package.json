@@ -1,7 +1,7 @@
 {
   "name": "imgapi-cli",
   "description": "a CLI for an Triton's IMGAPI (https://images.joyent.com/docs/)",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "author": "Joyent (joyent.com)",
   "private": true,
   "dependencies": {
