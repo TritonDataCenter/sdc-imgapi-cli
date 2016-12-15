@@ -2,6 +2,12 @@
 
 ## not yet released
 
+## 2.2.4
+
+- IMGAPI-606 Fix '--identity' (and the equiv `*_IMGADM_IDENTITY` env var) to
+  once again support taking a path to an SSH private key. This was broken
+  in version 2.0.0.
+
 ## 2.2.3
 
 - TOOLS-1636 Fix updates-imgadm et al to flush stdout on exit.

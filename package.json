@@ -1,7 +1,7 @@
 {
   "name": "imgapi-cli",
   "description": "a CLI for an Triton's IMGAPI (https://images.joyent.com/docs/)",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "author": "Joyent (joyent.com)",
   "private": true,
   "dependencies": {
@@ -11,7 +11,7 @@
     "mkdirp": "0.5.1",
     "nopt": "2.0.0",
     "progbar": "1.1.1",
-    "sdc-clients": "10.0.3",
+    "sdc-clients": "10.0.4",
     "strsplit": "1.0.0",
     "tabula": "1.8.0",
     "vasync": "1.6.4",
