@@ -2,6 +2,10 @@
 
 ## not yet released
 
+## 2.2.5
+
+- IMGAPI-623 `updates-imgadm -d ...` overly verbose
+
 ## 2.2.4
 
 - IMGAPI-606 Fix '--identity' (and the equiv `*_IMGADM_IDENTITY` env var) to
