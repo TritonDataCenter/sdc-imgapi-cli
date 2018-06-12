@@ -2,6 +2,11 @@
 
 ## not yet released
 
+## 2.3.0
+
+- TRITON-493: Add `--tree` option to sdc-imgadm et al to show origin
+  hierarchy.
+
 ## 2.2.5
 
 - IMGAPI-623 `updates-imgadm -d ...` overly verbose
