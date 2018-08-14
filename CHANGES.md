@@ -2,6 +2,11 @@
 
 ## not yet released
 
+## 2.3.1
+
+- TRITON-692 updates-imgadm doesn't work with npm v5 de-duped `node_modules`
+  layout
+
 ## 2.3.0
 
 - TRITON-493: Add `--tree` option to sdc-imgadm et al to show origin
