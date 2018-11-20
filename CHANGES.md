@@ -2,6 +2,10 @@
 
 ## not yet released
 
+## 2.4.0
+
+- TRITON-774 imgapi should allow add-file from URLs
+
 ## 2.3.1
 
 - TRITON-692 updates-imgadm doesn't work with npm v5 de-duped `node_modules`
