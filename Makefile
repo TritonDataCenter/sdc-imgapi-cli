@@ -5,7 +5,7 @@
 #
 
 #
-# Copyright 2016 Joyent, Inc.
+# Copyright (c) 2018, Joyent, Inc.
 #
 
 #
@@ -51,7 +51,7 @@ cutarelease: versioncheck
 	ver=$(shell cat package.json | json version) && \
 	    date=$(shell date -u "+%Y-%m-%d") && \
 	    git tag -a "v$$ver" -m "version $$ver ($$date)" && \
-	    git push --tags origin
+	    git push origin "v$$ver"
 
 DISTCLEAN_FILES += node_modules
 

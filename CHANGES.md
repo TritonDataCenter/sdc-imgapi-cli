@@ -2,6 +2,11 @@
 
 ## not yet released
 
+## 2.4.1
+
+- MANTA-4030 Bump sdc-clients dep to allow working around lru-cache@4.1.4
+  breaking node 0.10 usage.
+
 ## 2.4.0
 
 - TRITON-774 imgapi should allow add-file from URLs
