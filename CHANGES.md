@@ -2,7 +2,7 @@
 
 ## not yet released
 
-## 2.4.2
+## 2.5.0
 
  - TRITON-2052 sdc-imgadm import should import from any channel by default
 
