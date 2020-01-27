@@ -2,6 +2,10 @@
 
 ## not yet released
 
+## 2.4.2
+
+ - TRITON-2052 sdc-imgadm import should import from any channel by default
+
 ## 2.4.1
 
 - MANTA-4030 Bump sdc-clients dep to allow working around lru-cache@4.1.4
