@@ -4,11 +4,11 @@
 
 ## 2.6.0
 
- - TRITON-2304 New image server names
+- TRITON-2304 New image server names
 
 ## 2.5.0
 
- - TRITON-2052 sdc-imgadm import should import from any channel by default
+- TRITON-2052 sdc-imgadm import should import from any channel by default
 
 ## 2.4.1
 
