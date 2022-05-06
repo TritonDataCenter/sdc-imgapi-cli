@@ -1,4 +1,4 @@
-# joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
+# images-imgadm, sdc-imgadm, updates-imgadm Changelog
 
 ## not yet released
 
@@ -131,13 +131,11 @@
 - Change cli to report a "ClientError" when getting an IMGAPI client error.
   Previously these were reported as "InternalError"s.
 
-
 ## 1.1.0
 
 - Add '-c COMPRESSION' support for 'addfile', 'create' and 'import'
   subcommands.
 - Add 'import' subcmd.
-
 
 ## 1.0.1
 
