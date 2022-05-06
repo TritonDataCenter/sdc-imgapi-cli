@@ -7,15 +7,15 @@
 
 /*
  * Copyright 2016 Joyent, Inc.
+ * Copyright 2022 MNX Cloud, Inc.
  */
 
 /*
- * CLI for working with the central Joyent SDC Updates Image API:
- *      https://updates.joyent.com
+ * CLI for working with the central Triton Updates Image API:
+ *      https://updates.tritondatacenter.com
  *
- * Notes:
- * - This server will eventually be hosted at updates.joyent.com.
- * - This is *separate* from the "Joyent Images API": images.joyent.com.
+ * Note:
+ * - This is *separate* from the "SmartOS Images API": images.smartos.org.
  */
 
 var format = require('util').format;
@@ -27,9 +27,9 @@ var common = require('../lib/common');
 //---- globals
 
 var NAME = 'updates-imgadm';
-var URL = process.env.UPDATES_IMGADM_URL || 'https://updates.joyent.com';
+var URL = process.env.UPDATES_IMGADM_URL || 'https://updates.tritondatacenter.com';
 var DESCRIPTION = (
-    'Manage images on the central Joyent SDC Updates repo (https://updates.joyent.com).\n'
+    'Manage images on the central Triton Updates repo (https://updates.tritondatacenter.com).\n'
     + '\n'
     + 'Authentication is required for any modifying endpoints (adding images,\n'
     + 'etc.). To get access, you must have your username and key added\n'

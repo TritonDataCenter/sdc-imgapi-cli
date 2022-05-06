@@ -11,7 +11,7 @@
 
 /*
  * CLI for working with the central Joyent Images API:
- *      https://images.joyent.com
+ *      https://images.smartos.org
  */
 
 var format = require('util').format;
@@ -23,9 +23,9 @@ var common = require('../lib/common');
 //---- globals
 
 var NAME = 'joyent-imgadm';
-var URL = process.env.JOYENT_IMGADM_URL || 'https://images.joyent.com';
+var URL = process.env.JOYENT_IMGADM_URL || 'https://images.smartos.org';
 var DESCRIPTION = (
-    'Manage images on the central Joyent Images API (https://images.joyent.com).\n'
+    'Manage images on the central Joyent Images API (https://images.smartos.org).\n'
     + '\n'
     + 'Authentication is required for any modifying endpoints (adding images,\n'
     + 'etc.). To get access, you must have your username and key added\n'

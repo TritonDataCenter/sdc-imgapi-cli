@@ -1,8 +1,8 @@
 {
   "name": "imgapi-cli",
-  "description": "a CLI for an Triton's IMGAPI (https://images.joyent.com/docs/)",
-  "version": "2.5.0",
-  "author": "Joyent (joyent.com)",
+  "description": "a CLI for Triton's IMGAPI (https://images.smartos.org/docs/)",
+  "version": "2.6.0",
+  "author": "MNX Cloud (mnx.io)",
   "private": true,
   "dependencies": {
     "assert-plus": "1.0.0",
@@ -24,7 +24,8 @@
     "tape": "4.6.3"
   },
   "bin": {
-    "joyent-imgadm": "./bin/joyent-imgadm",
+    "images-imgadm": "./bin/images-imgadm",
+    "joyent-imgadm": "./bin/images-imgadm",
     "sdc-imgadm": "./bin/sdc-imgadm",
     "updates-imgadm": "./bin/updates-imgadm"
   },

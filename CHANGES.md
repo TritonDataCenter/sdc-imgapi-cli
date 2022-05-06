@@ -2,6 +2,10 @@
 
 ## not yet released
 
+## 2.6.0
+
+ - TRITON-2304 New image server names
+
 ## 2.5.0
 
  - TRITON-2052 sdc-imgadm import should import from any channel by default

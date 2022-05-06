@@ -9,12 +9,12 @@ This repository provides a number of CLIs interacting with a Triton
 [IMGAPI](https://github.com/joyent/sdc-imgapi) instance. There are typically
 three IMGAPI instances with which we interact:
 
-1. <https://images.joyent.com> The central repository of Joyent-vetted images
+1. <https://images.smartos.org> The central repository of Joyent-vetted images
    for using in Triton DataCenters and SmartOS machines. The `joyent-imgadm`
    tool is made for this.
-2. <https://updates.joyent.com> The repository of Joyent-provided images for
-   updating components of Triton DataCenter itself. The `updates-imgadm` tool
-   is made for this.
+2. <https://updates.tritondatacenter.com> The repository of Joyent-provided
+   images for updating components of Triton DataCenter itself. The
+   `updates-imgadm` tool is made for this.
 3. The IMGAPI service running inside a Triton DataCenter on the (private)
    "admin" network for operators of that DC. The `sdc-imgadm` tool is made for
    this.
@@ -28,12 +28,11 @@ headnode global or 'sdc0' zone. There is also a general `imgapi-cli` command
 that can be used for other IMGAPI endpoints, or for development and testing.
 
 Note that these `*-imgadm` tools are distinct from
-[imgadm(1m)](https://smartos.org/man/1m/imgadm). `imgadm` is part of SmartOS
+[imgadm(1m)](https://smartos.org/man/8/imgadm). `imgadm` is part of SmartOS
 itself and manages Triton images in a SmartOS server's zpool. It imports images
 from IMGAPI repositories (such as the 3 listed above).
 
-
-# Installation
+## Installation
 
 The `*-imgadm` tools can be installed like so:
 
@@ -42,8 +41,7 @@ The `*-imgadm` tools can be installed like so:
 If you are a Triton DC operator these tools will already be setup for use
 in the headnode GZ and the headnode 'sdc0' zone.
 
-
-# Development
+## Development
 
 Typically sdc-imgapi-cli development on a local Triton COAL instance is done by:
 
