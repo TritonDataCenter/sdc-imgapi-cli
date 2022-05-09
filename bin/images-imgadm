@@ -24,7 +24,8 @@ var common = require('../lib/common');
 //---- globals
 
 var NAME = 'images-imgadm';
-var URL = process.env.IMAGES_IMGADM_URL || 'https://images.smartos.org';
+var URL = process.env.IMAGES_IMGADM_URL || process.env.JOYENT_IMGADM_URL ||
+    'https://images.smartos.org';
 var DESCRIPTION = (
     'Manage images on the central SmartOS Images API (https://images.smartos.org).\n'
     + '\n'
