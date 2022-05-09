@@ -7,11 +7,12 @@
 
 /*
  * Copyright 2016 Joyent, Inc.
+ * Copyright 2022 MNX Cloud, Inc.
  */
 
 /*
- * CLI for working with the central Joyent Images API:
- *      https://images.joyent.com
+ * CLI for working with the central SmartOS Images API:
+ *      https://images.smartos.org
  */
 
 var format = require('util').format;
@@ -22,21 +23,22 @@ var common = require('../lib/common');
 
 //---- globals
 
-var NAME = 'joyent-imgadm';
-var URL = process.env.JOYENT_IMGADM_URL || 'https://images.joyent.com';
+var NAME = 'images-imgadm';
+var URL = process.env.IMAGES_IMGADM_URL || process.env.JOYENT_IMGADM_URL ||
+    'https://images.smartos.org';
 var DESCRIPTION = (
-    'Manage images on the central Joyent Images API (https://images.joyent.com).\n'
+    'Manage images on the central SmartOS Images API (https://images.smartos.org).\n'
     + '\n'
     + 'Authentication is required for any modifying endpoints (adding images,\n'
     + 'etc.). To get access, you must have your username and key added\n'
     + 'by the Images API administrator. Then set the following in your\n'
     + 'environment (presuming "~/.ssh/id_rsa.pub" is the key you provided):\n'
     + '\n'
-    + '    export JOYENT_IMGADM_USER=<given username>\n'
-    + '    export JOYENT_IMGADM_IDENTITY=`ssh-keygen -l -f ~/.ssh/id_rsa.pub \\\n'
+    + '    export IMAGES_IMGADM_USER=<given username>\n'
+    + '    export IMAGES_IMGADM_IDENTITY=`ssh-keygen -l -f ~/.ssh/id_rsa.pub \\\n'
     + '        | awk \'{print $2}\' | tr -d \'\\n\'`\n'
     + '\n'
-    + 'If setup correctly, `joyent-imgadm ping` should work (prints "pong").\n'
+    + 'If setup correctly, `images-imgadm ping` should work (prints "pong").\n'
     );
 var FEATURES = [];
 
@@ -67,6 +69,9 @@ function main(argv) {
         auth: 'signature',
         features: FEATURES,
         envopts: [
+            ['IMAGES_IMGADM_IDENTITY', 'identity'],
+            ['IMAGES_IMGADM_USER', 'user'],
+            ['IMAGES_IMGADM_INSECURE', 'insecure'],
             ['JOYENT_IMGADM_IDENTITY', 'identity'],
             ['JOYENT_IMGADM_USER', 'user'],
             ['JOYENT_IMGADM_INSECURE', 'insecure']

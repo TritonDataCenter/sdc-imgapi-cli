@@ -6,7 +6,8 @@
 #
 
 #
-# Copyright (c) 2014, Joyent, Inc.
+# Copyright 2014, Joyent, Inc.
+# Copyright 2022 MNX Cloud, Inc.
 #
 
 #
@@ -78,7 +79,7 @@
 #				for an sdcnode build that you want to use (potential compat
 #				issues be damned), then set this to the UUID of the sdcnode
 #				build you want. See here for available build image uuids:
-#				<https://download.joyent.com/pub/build/sdcnode/master-latest/sdcnode/>
+#				<https://download.tritondatacenter.com/pub/build/sdcnode/master-latest/sdcnode/>
 #
 #	BUILD			top-level directory for built binaries
 #				(default: "build")
@@ -101,7 +102,7 @@
 # build (say the developer changes NODE_PREBUILT_VERSION) will recreate the
 # node install.
 #
-# See <https://mo.joyent.com/docs/sdcnode/master/> for details on 'sdcnode-*'
+# See <https://github.com/TritonDataCenter/sdcnode> for details on 'sdcnode-*'
 # package naming.
 #
 
@@ -122,7 +123,7 @@ else
 	NODE_PREBUILT_NAME := $(NODE_PREBUILT_VERSION)-$(NODE_PREBUILT_TAG)-$(NODE_PREBUILT_IMAGE)
 endif
 NODE_PREBUILT_PATTERN := sdcnode-$(NODE_PREBUILT_NAME)-$(NODE_PREBUILT_BRANCH)-.*\.tgz
-NODE_PREBUILT_DIR ?= https://download.joyent.com/pub/build/sdcnode/$(NODE_PREBUILT_IMAGE)/$(NODE_PREBUILT_BRANCH)-latest/sdcnode/
+NODE_PREBUILT_DIR ?= https://download.tritondatacenter.com/pub/build/sdcnode/$(NODE_PREBUILT_IMAGE)/$(NODE_PREBUILT_BRANCH)-latest/sdcnode/
 ifeq ($(shell echo $(NODE_PREBUILT_DIR) | cut -c 1-4),http)
 	NODE_PREBUILT_BASE := $(shell curl -ksS --fail --connect-timeout 30 $(NODE_PREBUILT_DIR) | grep 'href=' | cut -d'"' -f2 | grep "^$(NODE_PREBUILT_PATTERN)$$" | sort | tail -1)
 	ifneq ($(NODE_PREBUILT_BASE),)

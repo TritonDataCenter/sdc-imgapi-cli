@@ -1,10 +1,14 @@
-# joyent-imgadm, sdc-imgadm, updates-imgadm Changelog
+# images-imgadm, sdc-imgadm, updates-imgadm Changelog
 
 ## not yet released
 
+## 2.6.0
+
+- TRITON-2304 New image server names
+
 ## 2.5.0
 
- - TRITON-2052 sdc-imgadm import should import from any channel by default
+- TRITON-2052 sdc-imgadm import should import from any channel by default
 
 ## 2.4.1
 
@@ -127,13 +131,11 @@
 - Change cli to report a "ClientError" when getting an IMGAPI client error.
   Previously these were reported as "InternalError"s.
 
-
 ## 1.1.0
 
 - Add '-c COMPRESSION' support for 'addfile', 'create' and 'import'
   subcommands.
 - Add 'import' subcmd.
-
 
 ## 1.0.1
 
