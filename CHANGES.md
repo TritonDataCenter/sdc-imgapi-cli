@@ -2,6 +2,10 @@
 
 ## not yet released
 
+## 2.7.0
+
+- TRITON-2352 Add 'xz' support to sdc-imgadm
+
 ## 2.6.0
 
 - TRITON-2304 New image server names
