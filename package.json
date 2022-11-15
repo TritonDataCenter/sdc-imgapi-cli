@@ -1,7 +1,7 @@
 {
   "name": "imgapi-cli",
   "description": "a CLI for Triton's IMGAPI (https://images.smartos.org/docs/)",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "author": "MNX Cloud (mnx.io)",
   "private": true,
   "dependencies": {
